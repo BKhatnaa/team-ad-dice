@@ -6,4 +6,4 @@ WORKDIR /app
 ADD requirements.txt /app
 RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
-CMD ["app.py"]
+CMD ["routes.py"]
