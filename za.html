@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  <p>utga: <input type="text" id="a" value="10"></p>
+</div>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("a");
+output.value = slider.value;
+slider.value = output.value;
+slider.oninput = function() {
+  output.value = this.value;
+}
+output.oninput = function() {
+  slider.value = this.value;
+}
+</script>
+
+</body>
+</html>
