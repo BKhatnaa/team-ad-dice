@@ -1,6 +1,10 @@
-poly = [[1,1],[1,2],[2,3],[3,2],[3,1]]
+import json
+
+with open('pg.json') as s:
+        data = json.load(s)
+c = data['coordinates']
+
 pnt = [1,1]
-c = poly
 v = []
 for i in range(len(c)-1):
 	if(c[i][0] == pnt[0] and c[i][1] == pnt[1]):
