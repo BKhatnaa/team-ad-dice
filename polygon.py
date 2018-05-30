@@ -9,7 +9,7 @@ def olon(filename):
 	v=[]
 	pp = Polygon(c)
         a = pp.is_valid
-	if(a == "False"):
+	if(a == False):
 		print("Ogtoltsol")
 	else:
 		for i in range(len(c)-1):
