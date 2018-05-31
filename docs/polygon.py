@@ -33,10 +33,9 @@ def olon(filename):
 						else: 
 							sh = 0
 				#Check point		
-				if(sh == pnt[0] and pnt[1] == c[i][1]):
-					v.append("0")
-				elif(sh >= pnt[0]):
-					v.append("1")
+				if(sh >= pnt[0] and pnt[1] == c[i][1]):
+					if(c[i-1][1] >= pnt[1] and c[i+1][1] <= pnt[1] or c[i-1][1] <= pnt[0] and c[i+1][1] >= pnt[1]):
+						v.append("1")
 		if(len(v) % 2 == 0):
 			return "outside"
 		else:
