@@ -8,13 +8,13 @@ def olon(filename):
 	pnt = data['check']
 	v=[]
 	pp = Polygon(c)
-        a = pp.is_valid
+	a = pp.is_valid
 	if(a == False):
-		print("Ogtoltsol")
+		return "Ogtoltsol"
 	else:
 		for i in range(len(c)-1):
 			if(c[i][0] == pnt[0] and c[i][1] == pnt[1]):
-				print("oroin tseg")
+				return "oroin tseg"
 			else:
 				if(c[i][0]-c[i+1][0] == 0):
 					if(c[i][1] >= pnt[1] and c[i+1][1] <= pnt[1] or c[i+1][1] >= pnt[1] and c[i][1] <= pnt[1]):
@@ -34,12 +34,12 @@ def olon(filename):
 							sh = 0
 				#Check point		
 				if(sh == pnt[0] and pnt[1] == c[i][1]):
-					v.append("1")
+					v.append("0")
 				elif(sh >= pnt[0]):
 					v.append("1")
 		if(len(v) % 2 == 0):
-			print("outside")
+			return "outside"
 		else:
-			print("inside")
+			return "inside"
 
 olon('pg.json')
