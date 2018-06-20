@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+<div><p>{{result}}</p></div>
+<div><p>{{c}}</p></div>
+<div><p>{{p}}</p></div>
+</body>
+
+<script>
+
+
+var poly = {coords:{{c}}};
+var poly2 = {coords:[{{p}}]};
+
+// console.log(poly);
+var canv = document.getElementById("myCanvas");
+// console.log(canv);
+var ctx = canv.getContext('2d');
+
+drawPolygon(ctx, poly);
+drawPolygon(ctx, poly2);
+
+
+function drawPolygon(canv, polygon){
+    canv.fillStyle = '#f00';
+    canv.beginPath();
+    canv.moveTo(polygon.coords[0][0],polygon.coords[0][1]);
+    for (var i = 1; i <= polygon.coords.length - 1; i++) {
+        canv.lineTo(polygon.coords[i][0], polygon.coords[i][1]);
+    }
+    canv.closePath();
+    canv.fill();
+}
+
+</script>
+
+
+</html>
